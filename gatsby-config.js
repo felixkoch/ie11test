@@ -30,5 +30,12 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint: 'https://freizeitimker-wuemme-region.us12.list-manage.com/subscribe/post?u=f171206b669b91f49eadf1673&id=006cc91ee3', // see instructions section below
+      },
+    },
   ],
+
 }
