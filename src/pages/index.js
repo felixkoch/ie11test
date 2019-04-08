@@ -1,3 +1,4 @@
+import 'react-app-polyfill/ie11';
 import React, {useState} from "react"
 import { Link } from "gatsby"
 
@@ -9,8 +10,23 @@ import EmailValidator from "email-validator";
 
 import { Helmet } from "react-helmet";
 import { graphql } from "gatsby";
-import Navbar from "react-bootstrap/Navbar";
+//import Navbar from "react-bootstrap/Navbar";
 //import Nav from "react-bootstrap/Nav";
+
+
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem } from 'reactstrap';
+
 import "./layout.scss";
 import "cookieconsent/build/cookieconsent.min.css";
 if (typeof window !== `undefined`) {
@@ -38,6 +54,39 @@ const IndexPage = (props) =>{
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Helmet><title>test</title></Helmet>
     <h1>Hi people</h1>
+    <Navbar color="light" light expand="md">
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarToggler />
+          <Collapse isOpen={false} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/components/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              </NavItem>
+              <UncontrolledDropdown nav inNavbar>
+                <DropdownToggle nav caret>
+                  Options
+                </DropdownToggle>
+                <DropdownMenu right>
+                  <DropdownItem>
+                    Option 1
+                  </DropdownItem>
+                  <DropdownItem>
+                    Option 2
+                  </DropdownItem>
+                  <DropdownItem divider />
+                  <DropdownItem>
+                    Reset
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+            </Nav>
+          </Collapse>
+        </Navbar>
+
+
   {/*
         <div id="banner" dangerouslySetInnerHTML={{
           __html: props.banner
